@@ -10,6 +10,7 @@ namespace PeopleProTraining.Dal.Models
     [MetadataType(typeof(EmployeeMetaData))]
     public partial class Employee
     {
+
     }
     public class EmployeeMetaData
     {
@@ -17,6 +18,17 @@ namespace PeopleProTraining.Dal.Models
 
         [Required]
         public string FirstName;
+
+        [Required]
+        public string LastName;
+
+        [DataType(DataType.Currency)]
+        public decimal Salary;
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Start Date")]
+        public DateTime StartDate;
 
     }
 
