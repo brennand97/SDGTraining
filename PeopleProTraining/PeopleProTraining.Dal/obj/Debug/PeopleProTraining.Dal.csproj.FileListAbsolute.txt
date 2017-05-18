@@ -8,3 +8,13 @@ C:\Users\douglbre\Documents\Visual Studio 2015\Projects\SDGTraining\PeopleProTra
 C:\Users\douglbre\Documents\Visual Studio 2015\Projects\SDGTraining\PeopleProTraining\PeopleProTraining.Dal\obj\Debug\PeopleProTraining.Dal.csprojResolveAssemblyReference.cache
 C:\Users\douglbre\Documents\Visual Studio 2015\Projects\SDGTraining\PeopleProTraining\PeopleProTraining.Dal\obj\Debug\PeopleProTraining.Dal.dll
 C:\Users\douglbre\Documents\Visual Studio 2015\Projects\SDGTraining\PeopleProTraining\PeopleProTraining.Dal\obj\Debug\PeopleProTraining.Dal.pdb
+C:\Users\douglbre\Source\Repos\SDGTraining\PeopleProTraining\PeopleProTraining.Dal\bin\Debug\PeopleProTraining.Dal.dll.config
+C:\Users\douglbre\Source\Repos\SDGTraining\PeopleProTraining\PeopleProTraining.Dal\bin\Debug\PeopleProTraining.Dal.dll
+C:\Users\douglbre\Source\Repos\SDGTraining\PeopleProTraining\PeopleProTraining.Dal\bin\Debug\PeopleProTraining.Dal.pdb
+C:\Users\douglbre\Source\Repos\SDGTraining\PeopleProTraining\PeopleProTraining.Dal\bin\Debug\EntityFramework.dll
+C:\Users\douglbre\Source\Repos\SDGTraining\PeopleProTraining\PeopleProTraining.Dal\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\douglbre\Source\Repos\SDGTraining\PeopleProTraining\PeopleProTraining.Dal\bin\Debug\EntityFramework.xml
+C:\Users\douglbre\Source\Repos\SDGTraining\PeopleProTraining\PeopleProTraining.Dal\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\douglbre\Source\Repos\SDGTraining\PeopleProTraining\PeopleProTraining.Dal\obj\Debug\PeopleProTraining.Dal.csprojResolveAssemblyReference.cache
+C:\Users\douglbre\Source\Repos\SDGTraining\PeopleProTraining\PeopleProTraining.Dal\obj\Debug\PeopleProTraining.Dal.dll
+C:\Users\douglbre\Source\Repos\SDGTraining\PeopleProTraining\PeopleProTraining.Dal\obj\Debug\PeopleProTraining.Dal.pdb
