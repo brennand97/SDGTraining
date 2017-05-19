@@ -10,11 +10,10 @@ namespace PeopleProTraining.Dal.Models
     [MetadataType(typeof(EmployeeMetaData))]
     public partial class Employee
     {
-
     }
     public class EmployeeMetaData
     {
-        public int Id;
+        public int EmployeeId;
 
         [Required]
         public string FirstName;
