@@ -18,7 +18,8 @@ namespace PeopleProTraining.Controllers
         // GET: Employees
         public ActionResult Index()
         {
-            return View(db.Employees.ToList());
+            var employees = db.Employees.Include(e => e.Building).Include(e => e.Department);
+            return View(employees.ToList());
         }
 
         // GET: Employees/Details/5
@@ -39,6 +40,8 @@ namespace PeopleProTraining.Controllers
         // GET: Employees/Create
         public ActionResult Create()
         {
+            ViewBag.BuildingId = new SelectList(db.Buildings, "Id", "Name");
+            ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "Name");
             return View();
         }
 
@@ -47,7 +50,7 @@ namespace PeopleProTraining.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EmployeeId,FirstName,LastName,Salary,StartDate")] Employee employee)
+        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Salary,StartDate,DepartmentId,BuildingId")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -56,6 +59,8 @@ namespace PeopleProTraining.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.BuildingId = new SelectList(db.Buildings, "Id", "Name", employee.BuildingId);
+            ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "Name", employee.DepartmentId);
             return View(employee);
         }
 
@@ -71,6 +76,8 @@ namespace PeopleProTraining.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.BuildingId = new SelectList(db.Buildings, "Id", "Name", employee.BuildingId);
+            ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "Name", employee.DepartmentId);
             return View(employee);
         }
 
@@ -79,7 +86,7 @@ namespace PeopleProTraining.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EmployeeId,FirstName,LastName,Salary,StartDate")] Employee employee)
+        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,Salary,StartDate,DepartmentId,BuildingId")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -87,6 +94,8 @@ namespace PeopleProTraining.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.BuildingId = new SelectList(db.Buildings, "Id", "Name", employee.BuildingId);
+            ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "Name", employee.DepartmentId);
             return View(employee);
         }
 

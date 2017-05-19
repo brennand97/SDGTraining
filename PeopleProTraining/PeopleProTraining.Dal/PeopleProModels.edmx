@@ -23,69 +23,80 @@
           <EntitySet Name="Employees" EntityType="PeopleProModels.Employee" />
           <EntitySet Name="Buildings" EntityType="PeopleProModels.Building" />
           <EntitySet Name="Departments" EntityType="PeopleProModels.Department" />
-          <AssociationSet Name="BuildingEmployee" Association="PeopleProModels.BuildingEmployee">
-            <End Role="Building" EntitySet="Buildings" />
-            <End Role="Employee" EntitySet="Employees" />
-          </AssociationSet>
           <AssociationSet Name="DepartmentEmployee" Association="PeopleProModels.DepartmentEmployee">
             <End Role="Department" EntitySet="Departments" />
             <End Role="Employee" EntitySet="Employees" />
           </AssociationSet>
+          <AssociationSet Name="BuildingEmployee" Association="PeopleProModels.BuildingEmployee">
+            <End Role="Building" EntitySet="Buildings" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="DepartmentBuilding" Association="PeopleProModels.DepartmentBuilding">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Building" EntitySet="Buildings" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Employee">
           <Key>
-            <PropertyRef Name="EmployeeId" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="EmployeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FirstName" Type="String" Nullable="true" />
           <Property Name="LastName" Type="String" Nullable="false" />
           <Property Name="Salary" Type="String" Nullable="false" />
           <Property Name="StartDate" Type="String" Nullable="false" />
-          <NavigationProperty Name="Building" Relationship="PeopleProModels.BuildingEmployee" FromRole="Employee" ToRole="Building" />
-          <Property Name="BuildingBuildingId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Department" Relationship="PeopleProModels.DepartmentEmployee" FromRole="Employee" ToRole="Department" />
-          <Property Name="DepartmentDepartmentId" Type="Int32" Nullable="false" />
+          <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Building" Relationship="PeopleProModels.BuildingEmployee" FromRole="Employee" ToRole="Building" />
+          <Property Name="BuildingId" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Building">
           <Key>
-            <PropertyRef Name="BuildingId" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="BuildingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" />
           <Property Name="Address" Type="String" Nullable="false" />
+          <Property Name="DepartmentDepartmentId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Employees" Relationship="PeopleProModels.BuildingEmployee" FromRole="Building" ToRole="Employee" />
+          <NavigationProperty Name="Departments" Relationship="PeopleProModels.DepartmentBuilding" FromRole="Building" ToRole="Department" />
         </EntityType>
         <EntityType Name="Department">
           <Key>
-            <PropertyRef Name="DepartmentId" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="DepartmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" />
           <NavigationProperty Name="Employees" Relationship="PeopleProModels.DepartmentEmployee" FromRole="Department" ToRole="Employee" />
+          <NavigationProperty Name="Buildings" Relationship="PeopleProModels.DepartmentBuilding" FromRole="Department" ToRole="Building" />
         </EntityType>
-        <Association Name="BuildingEmployee">
-          <End Type="PeopleProModels.Building" Role="Building" Multiplicity="1" />
-          <End Type="PeopleProModels.Employee" Role="Employee" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Building">
-              <PropertyRef Name="BuildingId" />
-            </Principal>
-            <Dependent Role="Employee">
-              <PropertyRef Name="BuildingBuildingId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="DepartmentEmployee">
           <End Type="PeopleProModels.Department" Role="Department" Multiplicity="1" />
           <End Type="PeopleProModels.Employee" Role="Employee" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Department">
-              <PropertyRef Name="DepartmentId" />
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Employee">
-              <PropertyRef Name="DepartmentDepartmentId" />
+              <PropertyRef Name="DepartmentId" />
             </Dependent>
           </ReferentialConstraint>
+        </Association>
+        <Association Name="BuildingEmployee">
+          <End Type="PeopleProModels.Building" Role="Building" Multiplicity="1" />
+          <End Type="PeopleProModels.Employee" Role="Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Building">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="BuildingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DepartmentBuilding">
+          <End Type="PeopleProModels.Department" Role="Department" Multiplicity="*" />
+          <End Type="PeopleProModels.Building" Role="Building" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -96,7 +107,7 @@
     <EntitySetMapping Name="Employees">
       <EntityTypeMapping TypeName="IsTypeOf(PeopleProModels.Employee)">
         <MappingFragment StoreEntitySet="Employees">
-          <ScalarProperty Name="EmployeeId" ColumnName="Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
         </MappingFragment>
       </EntityTypeMapping>

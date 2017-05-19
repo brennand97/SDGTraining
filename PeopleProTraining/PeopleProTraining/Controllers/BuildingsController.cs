@@ -47,7 +47,7 @@ namespace PeopleProTraining.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BuildingId,Name,Address")] Building building)
+        public ActionResult Create([Bind(Include = "Id,Name,Address,DepartmentDepartmentId")] Building building)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace PeopleProTraining.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BuildingId,Name,Address")] Building building)
+        public ActionResult Edit([Bind(Include = "Id,Name,Address,DepartmentDepartmentId")] Building building)
         {
             if (ModelState.IsValid)
             {

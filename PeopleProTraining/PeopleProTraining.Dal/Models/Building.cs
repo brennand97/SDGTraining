@@ -12,8 +12,6 @@ namespace PeopleProTraining.Dal.Models
     }
     public class BuildingMetaData
     {
-        public int BuildingId;
-
         [Required]
         public string Name;
 

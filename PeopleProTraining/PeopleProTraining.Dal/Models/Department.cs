@@ -12,8 +12,6 @@ namespace PeopleProTraining.Dal.Models
     }
     public class DepartmentMetaData
     {
-        public int DepartmentId;
-
         [Required]
         public string Name;
     }

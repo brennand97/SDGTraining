@@ -8,8 +8,9 @@
         <EntityTypeShape EntityType="PeopleProModels.Employee" Width="1.5" PointX="1.25" PointY="3.125" />
         <EntityTypeShape EntityType="PeopleProModels.Building" Width="1.5" PointX="3.375" PointY="3.125" />
         <EntityTypeShape EntityType="PeopleProModels.Department" Width="1.5" PointX="5.5" PointY="3.125" />
-        <AssociationConnector Association="PeopleProModels.BuildingEmployee" />
         <AssociationConnector Association="PeopleProModels.DepartmentEmployee" />
+        <AssociationConnector Association="PeopleProModels.BuildingEmployee" />
+        <AssociationConnector Association="PeopleProModels.DepartmentBuilding" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

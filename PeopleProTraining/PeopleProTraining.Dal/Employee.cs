@@ -18,7 +18,7 @@ using System;
 public partial class Employee
 {
 
-    public int EmployeeId { get; set; }
+    public int Id { get; set; }
 
     public string FirstName { get; set; }
 
@@ -28,15 +28,15 @@ public partial class Employee
 
     public string StartDate { get; set; }
 
-    public int BuildingBuildingId { get; set; }
+    public int DepartmentId { get; set; }
 
-    public int DepartmentDepartmentId { get; set; }
+    public int BuildingId { get; set; }
 
 
-
-    public virtual Building Building { get; set; }
 
     public virtual Department Department { get; set; }
+
+    public virtual Building Building { get; set; }
 
 }
 
