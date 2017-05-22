@@ -10,7 +10,6 @@
         <EntityTypeShape EntityType="PeopleProModels.Department" Width="1.5" PointX="5.5" PointY="3.125" />
         <AssociationConnector Association="PeopleProModels.DepartmentEmployee" />
         <AssociationConnector Association="PeopleProModels.BuildingEmployee" />
-        <AssociationConnector Association="PeopleProModels.DepartmentBuilding" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

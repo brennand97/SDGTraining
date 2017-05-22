@@ -12,10 +12,6 @@
       <End Role="Building" EntitySet="Buildings" />
       <End Role="Employee" EntitySet="Employees" />
     </AssociationSet>
-    <AssociationSet Name="DepartmentBuilding" Association="PeopleProModels.DepartmentBuilding">
-      <End Role="Department" EntitySet="Departments" />
-      <End Role="Building" EntitySet="Buildings" />
-    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Employee">
     <Key>
@@ -24,8 +20,8 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="FirstName" Type="String" Nullable="true" />
     <Property Name="LastName" Type="String" Nullable="false" />
-    <Property Name="Salary" Type="String" Nullable="false" />
-    <Property Name="StartDate" Type="String" Nullable="false" />
+    <Property Name="Salary" Type="Decimal" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" />
     <NavigationProperty Name="Department" Relationship="PeopleProModels.DepartmentEmployee" FromRole="Employee" ToRole="Department" />
     <Property Name="DepartmentId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Building" Relationship="PeopleProModels.BuildingEmployee" FromRole="Employee" ToRole="Building" />
@@ -38,9 +34,7 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" Nullable="false" />
     <Property Name="Address" Type="String" Nullable="false" />
-    <Property Name="DepartmentDepartmentId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Employees" Relationship="PeopleProModels.BuildingEmployee" FromRole="Building" ToRole="Employee" />
-    <NavigationProperty Name="Departments" Relationship="PeopleProModels.DepartmentBuilding" FromRole="Building" ToRole="Department" />
   </EntityType>
   <EntityType Name="Department">
     <Key>
@@ -49,7 +43,6 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" Nullable="false" />
     <NavigationProperty Name="Employees" Relationship="PeopleProModels.DepartmentEmployee" FromRole="Department" ToRole="Employee" />
-    <NavigationProperty Name="Buildings" Relationship="PeopleProModels.DepartmentBuilding" FromRole="Department" ToRole="Building" />
   </EntityType>
   <Association Name="DepartmentEmployee">
     <End Type="PeopleProModels.Department" Role="Department" Multiplicity="1" />
@@ -74,9 +67,5 @@
         <PropertyRef Name="BuildingId" />
       </Dependent>
     </ReferentialConstraint>
-  </Association>
-  <Association Name="DepartmentBuilding">
-    <End Type="PeopleProModels.Department" Role="Department" Multiplicity="*" />
-    <End Type="PeopleProModels.Building" Role="Building" Multiplicity="*" />
   </Association>
 </Schema>

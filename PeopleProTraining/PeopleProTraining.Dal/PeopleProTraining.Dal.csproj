@@ -65,6 +65,7 @@
     <Compile Include="Extensions\CacheManager.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Infrastructure\PeopleProContext.cs" />
+    <Compile Include="Infrastructure\PeopleProInitializer.cs" />
     <Compile Include="Infrastructure\PeopleProRepo.cs" />
     <Compile Include="Interfaces\IPeopleProContext.cs" />
     <Compile Include="Interfaces\IPeopleProRepo.cs" />

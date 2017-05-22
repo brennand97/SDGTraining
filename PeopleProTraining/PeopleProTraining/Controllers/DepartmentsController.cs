@@ -13,6 +13,7 @@ namespace PeopleProTraining.Controllers
 {
     public class DepartmentsController : Controller
     {
+
         private PeopleProContext db = new PeopleProContext();
 
         // GET: Departments
