@@ -10,11 +10,7 @@ namespace PeopleProTraining.Dal.Infrastructure
     public class PeopleProInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<PeopleProContext>
     {
         protected override void Seed(PeopleProContext context)
-        {
-            
-            base.Seed(context);
-            return;
-            
+        {            
 
             var departments = new List<Department>
             {

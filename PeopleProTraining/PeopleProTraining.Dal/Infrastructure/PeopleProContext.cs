@@ -6,6 +6,12 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PeopleProTraining;
+
+namespace PeopleProTraining.Controllers
+{
+
+}
 
 namespace PeopleProTraining.Dal.Infrastructure
 {
@@ -14,6 +20,7 @@ namespace PeopleProTraining.Dal.Infrastructure
         public PeopleProContext() : base("name=PeopleProTrainingDB") {
 
         }
+        
         public IDbSet<Employee> Employees { get; set; }
         public IDbSet<Building> Buildings { get; set; }
         public IDbSet<Department> Departments { get; set; }
