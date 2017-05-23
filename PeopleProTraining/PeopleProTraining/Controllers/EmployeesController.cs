@@ -18,8 +18,7 @@ namespace PeopleProTraining.Controllers
         // GET: Employees
         public ActionResult Index()
         {
-            var employees = db.Employees.Include(e => e.Building).Include(e => e.Department);
-            return View(employees.ToList());
+            return View(db.Employees.ToList());
         }
 
         // GET: Employees/Details/5
@@ -40,8 +39,6 @@ namespace PeopleProTraining.Controllers
         // GET: Employees/Create
         public ActionResult Create()
         {
-            ViewBag.BuildingId = new SelectList(db.Buildings, "Id", "Name");
-            ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "Name");
             return View();
         }
 
@@ -59,8 +56,6 @@ namespace PeopleProTraining.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.BuildingId = new SelectList(db.Buildings, "Id", "Name", employee.BuildingId);
-            ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "Name", employee.DepartmentId);
             return View(employee);
         }
 
@@ -76,8 +71,6 @@ namespace PeopleProTraining.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.BuildingId = new SelectList(db.Buildings, "Id", "Name", employee.BuildingId);
-            ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "Name", employee.DepartmentId);
             return View(employee);
         }
 
@@ -94,8 +87,6 @@ namespace PeopleProTraining.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.BuildingId = new SelectList(db.Buildings, "Id", "Name", employee.BuildingId);
-            ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "Name", employee.DepartmentId);
             return View(employee);
         }
 

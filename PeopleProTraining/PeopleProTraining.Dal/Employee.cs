@@ -32,12 +32,6 @@ public partial class Employee
 
     public int BuildingId { get; set; }
 
-
-
-    public virtual Department Department { get; set; }
-
-    public virtual Building Building { get; set; }
-
 }
 
 }

@@ -16,15 +16,15 @@
   <EntityType Name="Employee">
     <Key>
       <PropertyRef Name="Id" />
+      <PropertyRef Name="DepartmentId" />
+      <PropertyRef Name="BuildingId" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="FirstName" Type="String" Nullable="true" />
     <Property Name="LastName" Type="String" Nullable="false" />
     <Property Name="Salary" Type="Decimal" Nullable="false" />
     <Property Name="StartDate" Type="DateTime" Nullable="false" />
-    <NavigationProperty Name="Department" Relationship="PeopleProModels.DepartmentEmployee" FromRole="Employee" ToRole="Department" />
     <Property Name="DepartmentId" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Building" Relationship="PeopleProModels.BuildingEmployee" FromRole="Employee" ToRole="Building" />
     <Property Name="BuildingId" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="Building">

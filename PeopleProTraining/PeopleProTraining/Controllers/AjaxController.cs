@@ -22,6 +22,10 @@ namespace PeopleProTraining.Controllers
             {
                 case "departments":
                     return Json(db.Departments.ToList(), JsonRequestBehavior.AllowGet);
+                case "employees":
+                    return Json(db.Employees.ToList(), JsonRequestBehavior.AllowGet);
+                case "buildings":
+                    return Json(db.Buildings.ToList(), JsonRequestBehavior.AllowGet);
                 default:
                     return Json(new { success = false, responseText = "The table cannot be found/is not supported." }, JsonRequestBehavior.AllowGet);
             }

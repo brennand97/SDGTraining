@@ -35,15 +35,15 @@
         <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="Id" />
+            <PropertyRef Name="DepartmentId" />
+            <PropertyRef Name="BuildingId" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FirstName" Type="String" Nullable="true" />
           <Property Name="LastName" Type="String" Nullable="false" />
           <Property Name="Salary" Type="Decimal" Nullable="false" />
           <Property Name="StartDate" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="Department" Relationship="PeopleProModels.DepartmentEmployee" FromRole="Employee" ToRole="Department" />
           <Property Name="DepartmentId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Building" Relationship="PeopleProModels.BuildingEmployee" FromRole="Employee" ToRole="Building" />
           <Property Name="BuildingId" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Building">
@@ -93,14 +93,20 @@
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="PeopleProModelsStoreContainer" CdmEntityContainer="PeopleProModelsContainer">
-    <EntitySetMapping Name="Employees">
-      <EntityTypeMapping TypeName="IsTypeOf(PeopleProModels.Employee)">
-        <MappingFragment StoreEntitySet="Employees">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
+          <EntitySetMapping Name="Buildings">
+            <EntityTypeMapping TypeName="IsTypeOf(PeopleProModels.Building)">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="IsTypeOf(PeopleProModels.Department)">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
