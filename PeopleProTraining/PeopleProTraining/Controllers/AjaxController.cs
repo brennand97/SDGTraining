@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PeopleProTraining.Dal.Models;
 
 namespace PeopleProTraining.Controllers
 {
@@ -29,6 +30,14 @@ namespace PeopleProTraining.Controllers
                 default:
                     return Json(new { success = false, responseText = "The table cannot be found/is not supported." }, JsonRequestBehavior.AllowGet);
             }
+        }
+
+        [HttpPost]
+        public JsonResult AddDepartment(Department dept)
+        {
+            var obj = Json(db.Departments.Add(dept), JsonRequestBehavior.AllowGet);
+            db.SaveChanges();
+            return obj;
         }
     }
 }

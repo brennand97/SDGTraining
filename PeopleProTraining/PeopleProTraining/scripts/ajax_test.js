@@ -4,21 +4,6 @@ $(document).ready(function () {
 });
 
 function loadData() {
-    LoadDatabaseData();
-}
-
-function GetData(table, success_func, error_func) {
-    $.ajax({
-        url: "/Ajax/List?table=" + table,
-        type: "GET",
-        contentType: "application/json;charset=utf-8",
-        dataType: "json",
-        success: success_func,
-        error: error_func
-    });
-}
-
-function LoadDatabaseData() {
     // Get department data
     GetData("departments",
         function (result) {
@@ -76,4 +61,59 @@ function LoadDatabaseData() {
             alert(errormessage.responseText);
         }
     );
+}
+
+function GetData(table, success_func, error_func) {
+    $.ajax({
+        url: "/Ajax/List?table=" + table,
+        type: "GET",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+        success: success_func,
+        error: error_func
+    });
+}
+
+function addDepartment() {
+    var res = validate();
+    if (res === false) {
+        return false;
+    }
+    var deptObj = {
+        Id: $('#DepartmentID').val(),
+        Name: $('#Name').val()
+    };
+    $.ajax({
+        url: "/Ajax/AddDepartment",
+        data: JSON.stringify(deptObj),
+        type: "POST",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+        success: function (result) {
+            loadData();
+        },
+        error: function (errormessage) {
+            alert(errormessage.responseText);
+        }
+    });
+    $('#myModal').modal('hide');
+}
+
+//Function for clearing the textboxes  
+function clearTextBox() {
+    $('#DepartmentID').val("");
+    $('#Name').val("");
+}
+
+//Valdidation using jquery  
+function validate() {
+    var isValid = true;
+    if ($('#Name').val().trim() === "") {
+        $('#Name').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#Name').css('border-color', 'lightgrey');
+    }
+    return isValid;
 }

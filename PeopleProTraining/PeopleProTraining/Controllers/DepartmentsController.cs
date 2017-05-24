@@ -38,6 +38,7 @@ namespace PeopleProTraining.Controllers
         }
 
         // GET: Departments/Create
+        [Authorize(Users = "ONID\\douglbre")]
         public ActionResult Create()
         {
             return View();
