@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleProTraining.Core", "P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleProTraining.Test", "PeopleProTraining.Test\PeopleProTraining.Test.csproj", "{C31135C1-8629-4B41-B7CB-AF7FFB0E1478}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "PeopleProTraining.Schema", "PeopleProTraining.Schema\PeopleProTraining.Schema.sqlproj", "{0EC69430-25F2-49E5-97B7-9FB1565DA2DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,12 @@ Global
 		{C31135C1-8629-4B41-B7CB-AF7FFB0E1478}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C31135C1-8629-4B41-B7CB-AF7FFB0E1478}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C31135C1-8629-4B41-B7CB-AF7FFB0E1478}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EC69430-25F2-49E5-97B7-9FB1565DA2DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EC69430-25F2-49E5-97B7-9FB1565DA2DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EC69430-25F2-49E5-97B7-9FB1565DA2DC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0EC69430-25F2-49E5-97B7-9FB1565DA2DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EC69430-25F2-49E5-97B7-9FB1565DA2DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EC69430-25F2-49E5-97B7-9FB1565DA2DC}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

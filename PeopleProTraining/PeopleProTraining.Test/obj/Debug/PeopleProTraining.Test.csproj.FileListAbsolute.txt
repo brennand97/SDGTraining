@@ -40,3 +40,7 @@ C:\Users\douglbre\Source\Repos\SDGTraining\PeopleProTraining\PeopleProTraining.T
 C:\Users\douglbre\Source\Repos\SDGTraining\PeopleProTraining\PeopleProTraining.Test\bin\Debug\PeopleProTraining.Test.dll.config
 C:\Users\douglbre\Source\Repos\SDGTraining\PeopleProTraining\PeopleProTraining.Test\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\douglbre\Source\Repos\SDGTraining\PeopleProTraining\PeopleProTraining.Test\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\douglbre\Source\Repos\SDGTraining\PeopleProTraining\PeopleProTraining.Test\bin\Debug\Castle.Core.dll
+C:\Users\douglbre\Source\Repos\SDGTraining\PeopleProTraining\PeopleProTraining.Test\bin\Debug\Moq.dll
+C:\Users\douglbre\Source\Repos\SDGTraining\PeopleProTraining\PeopleProTraining.Test\bin\Debug\Castle.Core.xml
+C:\Users\douglbre\Source\Repos\SDGTraining\PeopleProTraining\PeopleProTraining.Test\bin\Debug\Moq.xml

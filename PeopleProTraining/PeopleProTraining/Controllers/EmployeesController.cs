@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PeopleProTraining.Dal.Infrastructure;
+using PeopleProTraining.Dal.Interfaces;
 using PeopleProTraining.Dal.Models;
 
 namespace PeopleProTraining.Controllers
@@ -14,7 +15,14 @@ namespace PeopleProTraining.Controllers
     [Authorize(Users = "ONID\\douglbre")]
     public class EmployeesController : Controller
     {
-        private PeopleProContext db = new PeopleProContext();
+        private IPeopleProContext db = new PeopleProContext();
+
+        public EmployeesController() { }
+
+        public EmployeesController(IPeopleProContext context)
+        {
+            db = context;
+        }
 
         // GET: Employees
         public ActionResult Index()
