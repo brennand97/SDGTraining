@@ -11,6 +11,7 @@ using PeopleProTraining.Dal.Models;
 
 namespace PeopleProTraining.Controllers
 {
+    [Authorize(Users = "ONID\\douglbre")]
     public class EmployeesController : Controller
     {
         private PeopleProContext db = new PeopleProContext();

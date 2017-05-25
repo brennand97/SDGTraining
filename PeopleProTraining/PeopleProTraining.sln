@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleProTraining", "PeopleProTraining\PeopleProTraining.csproj", "{5571347E-5899-4472-9B26-4F19778302F9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleProTraining.Dal", "PeopleProTraining.Dal\PeopleProTraining.Dal.csproj", "{5D101C0E-0749-4F64-807F-696B03800D9A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleProTraining.Core", "PeopleProTraining.Core\PeopleProTraining.Core.csproj", "{5435FDD8-FA28-4307-BEFF-019DDF8C3397}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleProTraining.Test", "PeopleProTraining.Test\PeopleProTraining.Test.csproj", "{C31135C1-8629-4B41-B7CB-AF7FFB0E1478}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{5435FDD8-FA28-4307-BEFF-019DDF8C3397}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5435FDD8-FA28-4307-BEFF-019DDF8C3397}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5435FDD8-FA28-4307-BEFF-019DDF8C3397}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C31135C1-8629-4B41-B7CB-AF7FFB0E1478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C31135C1-8629-4B41-B7CB-AF7FFB0E1478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C31135C1-8629-4B41-B7CB-AF7FFB0E1478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C31135C1-8629-4B41-B7CB-AF7FFB0E1478}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

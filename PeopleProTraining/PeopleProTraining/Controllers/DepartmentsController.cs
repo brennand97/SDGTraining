@@ -11,6 +11,7 @@ using PeopleProTraining.Dal.Models;
 
 namespace PeopleProTraining.Controllers
 {
+    [Authorize(Users = "ONID\\douglbre")]
     public class DepartmentsController : Controller
     {
 
@@ -38,7 +39,6 @@ namespace PeopleProTraining.Controllers
         }
 
         // GET: Departments/Create
-        [Authorize(Users = "ONID\\douglbre")]
         public ActionResult Create()
         {
             return View();

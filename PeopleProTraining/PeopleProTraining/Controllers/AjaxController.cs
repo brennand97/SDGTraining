@@ -33,6 +33,7 @@ namespace PeopleProTraining.Controllers
         }
 
         [HttpPost]
+        [Authorize(Users = "ONID\\douglbre")]
         public JsonResult AddDepartment(Department dept)
         {
             var obj = Json(db.Departments.Add(dept), JsonRequestBehavior.AllowGet);
